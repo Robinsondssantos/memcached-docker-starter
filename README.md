@@ -31,3 +31,13 @@ user@computer:~$ docker run --name database-name -e POSTGRES_PASSWORD=my-secret-
 ```
 user@computer:~$ docker ps
 ```
+
+## Check all containers 
+```
+user@computer:~$ docker ps -aq
+```
+
+## Restart a postgresql instance
+```
+user@computer:~$ docker restart <postgresql_container>
+```
