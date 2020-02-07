@@ -37,7 +37,13 @@ user@computer:~$ docker ps
 user@computer:~$ docker ps -aq
 ```
 
-## Restart a postgresql instance
+## Restart a postgresql container
 ```
-user@computer:~$ docker restart <postgresql_container>
+user@computer:~$ docker restart <postgresql_container_id>
 ```
+
+## Remove a postgresql container
+```
+user@computer:~$ docker rm <postgresql_container_id>
+```
+
