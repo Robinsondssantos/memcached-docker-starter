@@ -22,7 +22,7 @@ user@computer:~$ sudo usermod -aG docker $USER
 ```
 *The user need to execute log in to see their new group added*
 
-## Start a postgresql instance
+## Create the postgresql container
 ```
 user@computer:~$ docker run --name database-name -e POSTGRES_PASSWORD=my-secret-password -p 5432:5432 -d postgres
 ```
@@ -34,7 +34,17 @@ user@computer:~$ docker ps
 
 ## Check all containers 
 ```
-user@computer:~$ docker ps -aq
+user@computer:~$ docker ps -a
+```
+
+## Start the postgresql container
+```
+user@computer:~$ docker start <postgresql_container_id>
+```
+
+## Show statistics of postgresql container
+```
+user@computer:~$ docker stats <postgresql_container_id>
 ```
 
 ## Restart a postgresql container
