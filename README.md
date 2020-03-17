@@ -1,4 +1,4 @@
-# Docker starter postgresql
+# Memcached Docker starter
 
 ## Install docker in Ubuntu 19.04 (see how to install in your distro)
 ```
@@ -22,14 +22,20 @@ user@computer:~$ sudo usermod -aG docker $USER
 ```
 *The user need to execute log in to see their new group added*
 
-## Create the postgresql container
+## Create the memcached container
 ```
-user@computer:~$ docker run --name database-name -e POSTGRES_PASSWORD=my-secret-password -p 5432:5432 -d postgres
+user@computer:~$ docker run --name my-memcache -p 11211:11211 -d memcached memcached -m 64
 ```
 
-## Check if postgresql was running
+## Check if memcached was running
 ```
-user@computer:~$ docker ps
+user@computer:~$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                      NAMES
+aed7986aec3a        memcached           "docker-entrypoint.s…"   16 minutes ago      Up 16 minutes       0.0.0.0:11211->11211/tcp   my-memcache
+.
+.
+.
+user@computer:~$
 ```
 
 ## Check all containers 
@@ -37,23 +43,23 @@ user@computer:~$ docker ps
 user@computer:~$ docker ps -a
 ```
 
-## Start the postgresql container
+## Start the memcached container
 ```
-user@computer:~$ docker start <postgresql_container_id>
-```
-
-## Show statistics of postgresql container
-```
-user@computer:~$ docker stats <postgresql_container_id>
+user@computer:~$ docker start <mecached_container_id>
 ```
 
-## Restart a postgresql container
+## Show statistics of memcached container
 ```
-user@computer:~$ docker restart <postgresql_container_id>
+user@computer:~$ docker stats <mecached_container_id>
 ```
 
-## Remove a postgresql container
+## Restart a memcached container
 ```
-user@computer:~$ docker rm <postgresql_container_id>
+user@computer:~$ docker restart <mecached_container_id>
+```
+
+## Remove a memcached container
+```
+user@computer:~$ docker rm <mecached_container_id>
 ```
 
